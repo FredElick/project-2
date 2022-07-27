@@ -7,7 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "watch": "nodemon server.js",
-    "seeds": "node seeds/index.js"
+    "seeds": "node seeds/index.js",
+    "cloud": "node config/cloud-connection.js",
+    "index": "node index.js"
+
   },
   "repository": {
     "type": "git",
