@@ -1,31 +1,53 @@
-<section>
-  <h2>Create New Post</h2>
+<!DOCTYPE html>
+<html lang="en">
 
-  <form class="new-post-form">
-    <div>
-      <label for="post-title">Title</label>
-      <input type="text" id="post-title" name="post-title" />
-    </div>
-    <div>
-      <label for="post-url">Link</label>
-      <input id="post-url" name="post-url" />
-    </div>
-    <button type="submit" class="btn">Create</button>
-  </form>
-</section>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Blog</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="/stylesheets/style2.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+  {{!-- roboto font styles --}}
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+  {{!-- i lato font styles --}}
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,500,700&display=swap" rel="stylesheet">
 
-{{#if posts.length}}
-<section>
-  <h2>Your Posts</h2>
-  <ol>
-    {{#each posts as |post|}}
-    <li>
-      {{> post-info post}}
-      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
-    </li>
-    {{/each}}
-  </ol>
-</section>
-{{/if}}
+</head>
 
-<script src="/javascript/add-post.js"></script>
+<body>
+  <div class="wrapper">
+    <header>
+      {{!-- import img --}}
+      <img src="/img/Imagine-Ai-Logo.png" alt="logo" class="logo">
+      <h1>
+        <a href="/">AI Blog</a>
+      </h1>
+      </header>
+      <nav>
+        {{#if loggedIn}}
+        <a href="/dashboard">
+        <i class="fa-solid fa-table-columns"></i></a>
+        <button id="logout" class="btn-no-style"><i class="fa-solid fa-arrow-right-from-bracket"></i></button>
+        {{else}}
+        <a href="/login"><i class="fa-solid fa-arrow-right-to-bracket"></i></a>
+        {{/if}}
+      </nav>
+    
+    <main>
+      {{{ body }}}
+    </main>
+    <footer>
+      Thanks for visiting!
+    </footer>
+  </div>
+  
+  {{#if loggedIn}}
+  <script src="/javascript/logout.js"></script>
+  {{/if}}
+</body>
+
+</html>
+
+{{!-- dashboard logo from font awesome --}}
+
