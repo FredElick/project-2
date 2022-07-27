@@ -114,7 +114,7 @@ header h1 a {
 }
 
 img {
-  width: 7vw;
+  width: 5vw;
   height: 7vh;
   border-radius: 15%;
   margin-right: 10px;
@@ -126,6 +126,11 @@ nav {
   justify-content: space-around;
   align-items: center;
   margin-top: 4%;
+}
+
+nav a i, nav button i {
+  font-size: 1.5rem;
+  color: #a8a282;
 }
 
 nav a, #logout {

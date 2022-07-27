@@ -26,10 +26,11 @@
       </header>
       <nav>
         {{#if loggedIn}}
-        <a href="/dashboard">dashboard</a>
-        <button id="logout" class="btn-no-style">logout</button>
+        <a href="/dashboard">
+        <i class="fa-solid fa-table-columns"></i></a>
+        <button id="logout" class="btn-no-style"><i class="fa-solid fa-arrow-right-from-bracket"></i></button>
         {{else}}
-        <a href="/login">login</a>
+        <a href="/login"><i class="fa-solid fa-arrow-right-to-bracket"></i></a>
         {{/if}}
       </nav>
     
@@ -47,3 +48,6 @@
 </body>
 
 </html>
+
+{{!-- dashboard logo from font awesome --}}
+
