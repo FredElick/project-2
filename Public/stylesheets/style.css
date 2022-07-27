@@ -92,32 +92,78 @@ textarea {
   background: #f6fbf0;
 }
 
+/* header */
+
 header {
+  display: inline-flex;
+  justify-content: center;
+  
+  align-items: center;
+  margin-top: 2%;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #a8a282;
+}
+
+header h1 a {
+  color: #a8a282;
+  text-decoration: none;
+}
+
+img {
+  width: 7vw;
+  height: 7vh;
+  border-radius: 15%;
+  margin-right: 10px;
+
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 4%;
+}
+
+nav a, #logout {
+  text-decoration: none;
+  color: #a8a282;
+  font-weight: bold;
+  transition: color 0.1s;
+}
+
+nav a:hover, header h1 a:hover {
+  color: #a8a282;;
+}
+/* header { */
   /* border-bottom: 1px solid #ccc;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px; */
-  background: #e9f5df;
+  /* background: #e9f5df;
   display: flex;
   justify-content: space-evenly;
-  align-items: center;
+  align-items: center; */
   /* position: absolute; */
-}
+/* } */
 
-header h1 {
+/* header h1 {
   font-size: 1em;
   font-weight: bold;
   font-family: "Lato";
 }
 
-header a {
+header a { */
   /* font-size: 1em;
   color: black;
   text-decoration: none;
   transition: color 0.1s;
   font-family: 'Lato'; */
-  text-decoration: none;
+  /* text-decoration: none;
   font-size: 1.3em;
   color: #a8a282;
 }
@@ -125,7 +171,7 @@ header a {
 header a:active {
   color: #b1c18f;
   animation-duration: 0.7s;
-}
+} */
 
 main {
   flex: 1;
@@ -202,9 +248,30 @@ main {
   opacity: 0.6;
 }
 
-.new-post-form input {
+
+/* .new-post-form input {
   width: 300px;
+} */
+/* create post form */
+
+.new-post h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+  font-family: "Lato";
+  /* width: 100%; */
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  color: black;
 }
+
+.new-post-form {
+  position: relative;
+  justify-content: start;
+  
+  margin: 50px auto; ;
+}
+
 
 .edit-post-form {
   margin-bottom: 5%;

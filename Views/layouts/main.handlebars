@@ -18,9 +18,12 @@
 <body>
   <div class="wrapper">
     <header>
+      {{!-- import img --}}
+      <img src="/img/Imagine-Ai-Logo.png" alt="logo" class="logo">
       <h1>
         <a href="/">AI Blog</a>
       </h1>
+      </header>
       <nav>
         {{#if loggedIn}}
         <a href="/dashboard">dashboard</a>
@@ -29,7 +32,7 @@
         <a href="/login">login</a>
         {{/if}}
       </nav>
-    </header>
+    
     <main>
       {{{ body }}}
     </main>
