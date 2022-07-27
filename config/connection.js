@@ -3,7 +3,7 @@ require("dotenv").config();
 
 const sequelize = process.env.JAWSDB_URL
   ? new Sequelize(process.env.JAWSDB_URL)
-  : new Sequelize("AI_blog", "root", "", {
+  : new Sequelize("text_to_image_db", "root", "", {
       host: "localhost",
       dialect: "mysql",
       dialectOptions: {
