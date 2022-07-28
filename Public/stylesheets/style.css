@@ -286,10 +286,30 @@ main {
 }
 
 .new-post-form {
-  position: relative;
-  justify-content: start;
+  /* center form in middleofpage */
+  margin: 10px auto;
+  display: block;
+  width: 20vw;
+  padding: 10px;
+
+}
+
+.share-image-form{
+  margin: 10px auto;
+  display: block;
+  width: 20vw;
+  padding: 10px;
+}
+
+#display-image {
+  width: 400px;
+  height: 225px;
+  /* center in middle of screen */
+  margin: 10px auto;
+  display: block;
   
-  margin: 50px auto; ;
+  background-position: center;
+  background-size: cover;
 }
 
 

@@ -1,0 +1,8 @@
+{{! create gallery view to show all images }}
+<div class="gallery-container">
+  {{#each images as |image|}}
+    <div class="gallery-image">
+      <img src="{{image.url}}" alt="{{image.title}}" />
+    </div>
+  {{/each}}
+</div>

@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const sequelize = require("../../config/connection");
+const deepai = require("deepai");
 const cloudinary = require("../../config/cloud-connection");
 const { Post, User, Comment, Vote } = require("../../models");
 const withAuth = require("../../utils/auth");
@@ -101,45 +102,62 @@ router.post("/", withAuth, (req, res) => {
     });
 });
 
-router.post("/image", (req, res) => {
-  
-const uploadImage = async (imagePath) => {
+router.post("/prompts", (req, res) => {
+  deepai.setApiKey("ae65e618-54a9-4305-8dc6-e98372c26edf");
 
-  // Use the uploaded file's name as the asset's public ID and 
-  // allow overwriting the asset with new versions
-  const options = {
-    use_filename: true,
-    unique_filename: false,
-    overwrite: true,
-  };
+  const resp = deepai
+    .callStandardApi("text2img", {
+      // send post data as json object
+      text: req.body.value,
+    })
+    .then((res) => {
+      console.log(res);
+      cloudinary.uploader.upload(
+        res.output_url,
+        {
+          unique_id: true,
+          folder: "prompts",
+          use_filename: true,
+          unique_filename: false,
+          overwrite: true,
+        },
+        (err, result) => {
+          if (err) {
+            console.log(err);
+            res.status(500).json(err);
+          } else {
+            console.log(result);
+          }
+        }
+      );
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 
-  try {
-    // Upload the image
-    const result = await cloudinary.uploader.upload(imagePath, options);
-    console.log(result);
-    return result.public_id;
-  } catch (error) {
-    console.error(error);
-  }
-};
+  // console.log(res);
+  console.log(resp);
+  // store image in cloudinary
+  // cloudinary.uploader
+  //   .upload(resp.output_url, this.options
 
-//////////////////
-//
-// Main function
-//
-//////////////////
-(async () => {
-
-const imagePath = req.file.path;
-  await uploadImage(imagePath);
-
-})();
+  //     ,function (result) {
+  //     console.log(result);
+  //   })
+  //   .then((result) => {
+  //     console.log(result);
+  //     res.json(result);
+  //   })
+  //   .catch((err) => {
+  //     console.log(err);
+  //     res.status(500).json(err);
+  //   });
 });
 
-
-
-
-
+router.get("/prompts", (req, res) => {
+  // get all prompts
+});
 
 router.put("/upvote", withAuth, (req, res) => {
   // custom static method created in models/Post.js

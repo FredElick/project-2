@@ -12,13 +12,22 @@
     </div>
     <button type="submit" class="btn">Create</button>
   </form>
-  
-  <form class="share-image-form">
-    <input id="image-input" type="file" name="file" accept="image/png, image/jpg">
-    <button type="submit" class="btn">Upload</button>
+
+  <form class="image-promt-form">
+    <label for="image-prompt-title">Prompt</label>
+    <input type="text" id="image-prompt" name="image-prompt" />
+    <button type="submit" class="btn">Generate</button>
   </form>
 
-  <div id="display-image"></div>
+
+    
+  
+  {{!-- <form class="share-image-form">
+    <input id="image-input" type="file" name="file" accept="image/png, image/jpg">
+    <button type="submit" class="btn">Upload</button>
+  </form> --}}
+
+  {{!-- <div id="display-image"></div> --}}
   {{!-- {{#if previewSource}}
     <img src={previewSource} />
   {{/if}} --}}
@@ -41,5 +50,6 @@
 {{/if}}
 
 <script src="/javascript/add-post.js"></script>
+<script src="/javascript/text-to-image.js"></script>
 
-<script src="/javascript/share-image.js"></script>
+{{!-- <script src="/javascript/share-image.js"></script> --}}
