@@ -12,10 +12,18 @@
     </div>
     <button type="submit" class="btn">Create</button>
   </form>
-  <form>
-    <input type="file" name="file" onchange={} value={} id="file-input">
+  
+  <form class="share-image-form">
+    <input id="image-input" type="file" name="file" accept="image/png, image/jpg">
     <button type="submit" class="btn">Upload</button>
   </form>
+
+  <div id="display-image"></div>
+  {{!-- {{#if previewSource}}
+    <img src={previewSource} />
+  {{/if}} --}}
+{{!-- if user choose image file show preview state below --}}
+ 
 </section>
 
 {{#if posts.length}}
@@ -33,3 +41,5 @@
 {{/if}}
 
 <script src="/javascript/add-post.js"></script>
+
+<script src="/javascript/share-image.js"></script>

@@ -10,7 +10,6 @@
     "seeds": "node seeds/index.js",
     "cloud": "node config/cloud-connection.js",
     "index": "node index.js"
-
   },
   "repository": {
     "type": "git",
@@ -31,6 +30,7 @@
     "express-session": "^1.17.3",
     "express.js": "^1.0.0",
     "mysql2": "^2.3.3",
+    "react": "^18.2.0",
     "sequelize": "^6.21.3"
   }
 }

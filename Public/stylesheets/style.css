@@ -113,7 +113,7 @@ header h1 a {
   text-decoration: none;
 }
 
-img {
+.logo {
   width: 5vw;
   height: 7vh;
   border-radius: 15%;
@@ -143,6 +143,8 @@ nav a, #logout {
 nav a:hover, header h1 a:hover {
   color: #a8a282;;
 }
+
+
 /* header { */
   /* border-bottom: 1px solid #ccc;
   display: flex;
@@ -258,6 +260,19 @@ main {
   width: 300px;
 } */
 /* create post form */
+
+/* Dashboard */
+#display-image{
+  width: 400px;
+  height: 225px;
+ /* center in middle of screen */
+  margin: 10px auto;
+  display: block;
+  border: #333 solid 1px;
+  background-position: center;
+  background-size: cover;
+
+}
 
 .new-post h2 {
   font-size: 1.5em;
