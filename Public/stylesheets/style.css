@@ -23,12 +23,14 @@
   box-sizing: border-box;
 }
 
+
+
 body,
 html {
   height: 100%;
   padding: 0;
   margin: 0;
-  font-family: "Roboto";
+  /* font-family: "Roboto"; */
   color: #333;
   background: #f6fbf0;
 }
@@ -44,20 +46,15 @@ a:hover {
   color: #3486eb;
 }
 
-button {
+/* button {
   background-color: #225ca3;
-  border: 0;
-  padding: 1%;
-  color: white;
-  font-weight: bold;
-  transition: background-color 0.1s;
-  cursor: pointer;
-  border-radius: 5px;
+  border: none;
+
 }
 
 button:hover {
   background-color: #3486eb;
-}
+} */
 
 .post-list {
   margin: 0;
@@ -65,17 +62,17 @@ button:hover {
 }
 
 textarea,
-input {
+/* input {
   padding: 0.5%;
   border-radius: 5px;
   border: 1px solid #ccc;
-}
+} */
 
 textarea:focus,
-input:focus {
+/* input:focus {
   outline: none;
   border: 1px solid #3486eb;
-}
+} */
 
 textarea {
   min-width: 40%;
@@ -104,13 +101,23 @@ header {
 
 header h1 {
   font-size: 2.5rem;
+  /* font-weight: bold; */
+  font-family: 'futura';
+  /* font-style: italic; */
+  color: #7d785f;
+}
+
+header span {
+  font-size: 1.5rem;
   font-weight: bold;
-  color: #a8a282;
+  font-family: 'monaco';
+  color: #b8b292;
 }
 
 header h1 a {
-  color: #a8a282;
+  color: #7d785f;
   text-decoration: none;
+  font-family: 'futura';
 }
 
 .logo {
@@ -118,20 +125,23 @@ header h1 a {
   height: 7vh;
   border-radius: 15%;
   margin-right: 10px;
+  background:transparen ;
 
 }
 
 nav {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   margin-top: 4%;
 }
 
-nav a i, nav button i {
+nav a i, nav i {
   font-size: 1.5rem;
   color: #a8a282;
+  margin-right: 125px;
 }
+
 
 nav a, #logout {
   text-decoration: none;
@@ -185,7 +195,7 @@ main {
   padding: 2% 4%;
 }
 
-.btn-no-style {
+/* .btn-no-style {
   background: none;
   border: none;
   padding: 0;
@@ -201,7 +211,7 @@ main {
 .btn-no-style:hover {
   background: none;
   color: #3486eb;
-}
+} */
 
 .delete-post-btn {
   background-color: #d41414;
@@ -256,10 +266,17 @@ main {
 }
 
 
-/* .new-post-form input {
+ .new-post-form input {
   width: 300px;
+} 
+
+/* .create button{
+  background-color: #fff;
+}
+.create button:hover{
+  background-color: #fff;
 } */
-/* create post form */
+
 
 /* Dashboard */
 #display-image{
@@ -277,8 +294,8 @@ main {
 .new-post h2 {
   font-size: 1.5em;
   font-weight: bold;
-  font-family: "Lato";
-  /* width: 100%; */
+  font-family: "futura";
+
   align-items: center;
   display: flex;
   justify-content: center;
@@ -286,25 +303,45 @@ main {
 }
 
 .new-post-form {
-  /* center form in middleofpage */
+
   margin: 10px auto;
   display: block;
   width: 20vw;
   padding: 10px;
+  position: relative;
 
+} 
+
+.max-w-sm {
+  max-width: 500vw;
 }
 
-.share-image-form{
+
+ form.image-prompt-form.w-full.max-w-sm > div {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  /* width: 50%; */
+  margin: 100px auto;
+ }
+
+ .Gen-btn {
+  background-color:  #b8b292;
+  padding: 1%;
+  border-radius: 15px;
+ }
+
+/* .share-image-form{
   margin: 10px auto;
   display: block;
   width: 20vw;
   padding: 10px;
-}
+} */
 
 #display-image {
   width: 400px;
   height: 225px;
-  /* center in middle of screen */
+
   margin: 10px auto;
   display: block;
   

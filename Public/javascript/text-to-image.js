@@ -13,19 +13,29 @@ const promptFormHandler = async function (e) {
     },
   });
 
-  if (response.ok) {
-    document.location.replace("/dashboard");
+  // if(response.ok === true ) {
+  //   console.log("success");
+
+  // }
+console.log('success');
+  // if (response.ok) {
+  //   document.location.replace("/gallery");
     
-  } else {
-    alert(response.statusText);
-  }
+    
+  // } else {
+  //   alert(response.statusText);
+  // }
+  // document.location.replace("/gallery");
 
   //   console.log(resp);
 };
 
-document
-  .querySelector(".image-promt-form")
-  .addEventListener("submit", promptFormHandler);
+// document
+//   .querySelector("#image-prompt-form")
+//   .addEventListener("submit", promptFormHandler);
+
+document.querySelector('.image-prompt-form').addEventListener('submit', promptFormHandler);
+  
 
 // async function handlePrompt(event) {
 

@@ -1,5 +1,6 @@
 {{! create gallery view to show all images }}
 <div class="gallery-container">
+    {{!-- <h1 class="gallery-title">Gallery</h1> --}}
   {{#each images as |image|}}
     <div class="gallery-image">
       <img src="{{image.url}}" alt="{{image.title}}" />

@@ -116,10 +116,9 @@ router.post("/prompts", (req, res) => {
         res.output_url,
         {
           unique_id: true,
-          folder: "prompts",
-          use_filename: true,
-          unique_filename: false,
-          overwrite: true,
+          use_filename: false,
+          unique_filename: true,
+          overwrite: false,
         },
         (err, result) => {
           if (err) {
@@ -138,21 +137,8 @@ router.post("/prompts", (req, res) => {
 
   // console.log(res);
   console.log(resp);
-  // store image in cloudinary
-  // cloudinary.uploader
-  //   .upload(resp.output_url, this.options
+  return resp;
 
-  //     ,function (result) {
-  //     console.log(result);
-  //   })
-  //   .then((result) => {
-  //     console.log(result);
-  //     res.json(result);
-  //   })
-  //   .catch((err) => {
-  //     console.log(err);
-  //     res.status(500).json(err);
-  //   });
 });
 
 router.get("/prompts", (req, res) => {
