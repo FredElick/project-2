@@ -75,17 +75,16 @@ nav i:hover {
   color: var(--primary-light);
 }
 
-#logout{
+#logout {
   display: none;
 }
 
-#logout:hover{
+#logout:hover {
   color: var(--primary-light);
   cursor: pointer;
 }
 
 #logout-2:hover {
-  
   cursor: pointer;
 }
 /* NAV END */
@@ -238,14 +237,14 @@ input::placeholder {
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin:40px auto;
+  margin: 40px auto;
 }
 
 .new-post h2 {
   font-family: "lato";
   font-size: 1.5em;
   color: var(--secondary-light);
-  margin: 10px auto 0 auto ;
+  margin: 10px auto 0 auto;
   text-align: center;
 }
 
@@ -296,6 +295,151 @@ input::placeholder {
   color: var(--primary-dark);
   cursor: pointer;
 }
+.image-prompt-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 20px auto;
+}
+
+#image-prompt {
+  border: 1px solid var(--primary-dark);
+  border-radius: 5px;
+  padding: 0 10px;
+  margin-bottom: 10px;
+  width: 40%;
+  height: 60%;
+}
+/* POST START */
+#your-post-title {
+  font-family: "lato";
+  font-size: 1.5em;
+  color: var(--secondary-light);
+  margin: 10px auto 0 auto;
+  text-align: center;
+}
+
+ol {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+li,
+.blog-post {
+  background-color: var(--primary-dark);
+  color: var(--secondary-light);
+  width: 90%;
+  font-family: "lato";
+  font-size: 1.2em;
+  text-decoration: none;
+  margin: 20px auto;
+  border: #05386b 1px solid;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 5px;
+}
+
+.blog-article a {
+  text-decoration: none;
+  color: var(--secondary-light);
+  margin:10px 10px 0 10px;
+}
+
+.blog-article span {
+  font-family: "lato";
+  font-size: 0.8em;
+  color: var(--secondary-light);
+  margin: 10px auto 0 5px;
+  text-align: center;
+  color: rgb(245, 245, 131);
+}
+
+.blog-details{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 10px auto 0 auto;
+  padding: 1%;
+}
+
+.edit-link {
+  color: var(--secondary-light);
+  font-family: "lato";
+  font-size: 0.6em;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.edit-link:hover {
+  color: var(--primary-dark);
+  cursor: pointer;
+}
+
+#dash {
+  color: var(--secondary-light);
+  font-family: "lato";
+  font-size: 0.7em;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+#dash:hover {
+  color: var(--primary-dark);
+  cursor: pointer;
+}
+/* .your-post-section {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+/* margin-bottom: 20px; */
+/* } */
+
+/* make ol blog post */
+/* ol { */
+/* height: 70%;
+  width: 100%; */
+/* display: table; */
+/* justify-content: center;
+  align-items: center;  */
+/* margin-bottom: 20px; */
+/* } 
+ol a {
+  text-decoration: none;
+  color: var(--secondary-light);
+}
+ol span {
+  font-family: "lato";
+  font-size: 0.8em;
+  
+}
+
+li {
+  display: table-row;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+} */
+
+/* make beautiful ui box */
+/* .blog-container {
+  width: 100%;
+  border: #05386b 1px solid;
+} */
+
+/* .blog-details {
+  font-family: "lato";
+  font-size: 0.8em;
+  color: white; */
+
+/* margin-bottom: 20px; */
+/* } */
 /* DASHBOARD END */
 
 /* FOOTER START  */

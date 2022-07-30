@@ -4,7 +4,6 @@ const deepai = require("deepai");
 const cloudinary = require("../../config/cloud-connection");
 const { Post, User, Comment, Vote } = require("../../models");
 const withAuth = require("../../utils/auth");
-
 // get all users
 router.get("/", (req, res) => {
   console.log("======================");
@@ -89,7 +88,6 @@ router.get("/:id", (req, res) => {
 });
 
 router.post("/", withAuth, (req, res) => {
-  // expects {title: 'Taskmaster goes public!', post_url: 'https://taskmaster.com/press', user_id: 1}
   Post.create({
     title: req.body.title,
     post_url: req.body.post_url,
@@ -105,44 +103,28 @@ router.post("/", withAuth, (req, res) => {
 router.post("/prompts", (req, res) => {
   deepai.setApiKey("ae65e618-54a9-4305-8dc6-e98372c26edf");
 
-  deepai
-    .callStandardApi("text2img", {
+  async function generateImage() {
+    let response = await deepai.callStandardApi("text2img", {
       text: req.body.value,
-    })
-    // .then((data) => {
-    //   res.json(data);
-    //   console.log(data);
-    // })
-    .then((aiData) => {
-      console.log(aiData);
-      cloudinary.uploader.upload(aiData.output_url, (err, result) => {
-        if (err) {
-          console.log(err);
-          res.status(500).json(err);
-        }
-        console.log(result);
-       return res.json(result);
-        
-      });
     });
 
-  //   var cloudResponse = await cloudinary.uploader.upload(
-  //     deepAiresp.output_url,
-  //     {
-  //       unique_id: true,
-  //       use_filename: false,
-  //       unique_filename: true,
-  //       overwrite: false,
-  //     }
-  //   );
-});
+    console.log(response);
 
-router.get("/prompts", (req, res) => {
-  // get all prompts
+    let cloudRes = await cloudinary.uploader.upload(response.output_url, {
+      unique_id: true,
+      use_filename: false,
+      unique_filename: true,
+      overwrite: false,
+    });
+
+    let cloudData = await res.json(cloudRes);
+    console.log(cloudData);
+    return cloudData;
+  }
+  generateImage();
 });
 
 router.put("/upvote", withAuth, (req, res) => {
-  // custom static method created in models/Post.js
   Post.upvote(
     { ...req.body, user_id: req.session.user_id },
     { Vote, Comment, User }

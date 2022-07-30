@@ -1,6 +1,6 @@
 document.getElementById("loading").style.visibility = "hidden";
 
-const promptFormHandler = async function (e, result) {
+const promptFormHandler = async function (e) {
   e.preventDefault();
   document.getElementById("loading").style.visibility = "visible";
 
