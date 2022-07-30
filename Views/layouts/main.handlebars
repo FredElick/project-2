@@ -10,28 +10,26 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
     />
-    {{!-- {{! roboto font styles }}
+    {{! roboto font styles }}
     <link
       href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
       rel="stylesheet"
-    /> --}}
+    /> 
     {{! i lato font styles }}
-    {{!-- <link
+    <link
       href="https://fonts.googleapis.com/css?family=Lato:300,400,500,700&display=swap"
       rel="stylesheet"
-    /> --}}
-    {{!-- import monaco font --}}
-    {{!-- <link
+    /> 
+    {{! import monaco font }}
+   <link
       href="https://fonts.googleapis.com/css?family=monaco:300,400,500,700&display=swap"
       rel="stylesheet"
-    /> --}}
-    {{!-- import futura font --}}
+    /> 
+    {{! import futura font }}
     <link
       href="https://fonts.googleapis.com/css?family=Futura:300,400,500,700&display=swap"
       rel="stylesheet"
     />
-    {{!-- import tailwind cdn --}}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" />
 
   </head>
 
@@ -39,31 +37,32 @@
     <div class="wrapper">
       <header>
         {{! import img }}
-        <img src="/img/Imagine-Ai-Logo.png" alt="logo" class="logo" />
-        <h1 class="site-title">
-          <a href="/">Imagine 
-          <span>Ai</span></a>
-        </h1>
+        <div class="header-container">
+          <img src="/img/Imagine-Ai-Logo.png" alt="logo" class="logo" />
+          <h1 class="site-title">
+            <a href="/">Imagine
+              <span>Ai</span></a>
+          </h1>
+        </div>
       </header>
       <nav>
         {{#if loggedIn}}
           <a href="/dashboard">
             <i class="fa-solid fa-table-columns"></i></a>
+
           <button id="logout" class="btn-no-style"></button>
+
           <a href="/gallery">
             <i class="fa-solid fa-images"></i>
-            <button id="gallery-button" class="btn-no-style"></button>
-
           </a>
 
         {{else}}
           <a href="/login"><i
               class="fa-solid fa-arrow-right-to-bracket"
             ></i></a>
-            <a href="/gallery">
+
+          <a href="/gallery">
             <i class="fa-solid fa-images"></i>
-            <button id="gallery-button" class="btn-no-style">
-                </button>
 
           </a>
 

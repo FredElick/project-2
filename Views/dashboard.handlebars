@@ -1,16 +1,16 @@
 <section class="new-post">
   <h2>Create New Post</h2>
 
-  <form class="new-post-form w-full max-w-sm">
-    <div class="flex items-center border-b border-teal-500 py-2">
+  <form class="new-post-form">
+    
       {{!-- <label for="post-title">Title</label> --}}
-      <input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="Enter post title" id="post-title" name="post-title" />
+      <input type="text" placeholder="Enter post title" id="post-title" name="post-title" />
     </div>
-    <div class="flex items-center border-b border-teal-500 py-2">
+   
       
-      <input  class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" id="post-url" placeholder="Enter post url" name="post-url" />
+      <input   id="post-url" placeholder="Enter post url" name="post-url" />
     </div>
-    <button class="create flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded" type="submit">Create</button>
+    <button class="create " type="submit">Create</button>
   </form>
 
   {{!-- <form class="w-full max-w-sm">
@@ -22,10 +22,10 @@
     
   </div>
 </form> --}}
-
+ <p id="loading">loading image.. please wait</p>
   <form class="image-prompt-form w-full max-w-sm">
      <div class="flex items-center border-b border-teal-500 py-2">
-    
+   
     <input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" id="image-prompt" placeholder="Enter prompt"name="image-prompt" />
     <button type="submit" class="Gen-btn">Generate</button>
     </div>  

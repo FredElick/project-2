@@ -102,43 +102,37 @@ router.post("/", withAuth, (req, res) => {
     });
 });
 
-router.post("/prompts", (req, res) => {
+router.post("/prompts", async (req, res) => {
   deepai.setApiKey("ae65e618-54a9-4305-8dc6-e98372c26edf");
-
-  const resp = deepai
-    .callStandardApi("text2img", {
+  try {
+    var deepAiresp = await deepai.callStandardApi("text2img", {
       // send post data as json object
       text: req.body.value,
-    })
-    .then((res) => {
-      console.log(res);
-      cloudinary.uploader.upload(
-        res.output_url,
-        {
-          unique_id: true,
-          use_filename: false,
-          unique_filename: true,
-          overwrite: false,
-        },
-        (err, result) => {
-          if (err) {
-            console.log(err);
-            res.status(500).json(err);
-          } else {
-            console.log(result);
-          }
-        }
-      );
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(500).json(err);
     });
 
-  // console.log(res);
-  console.log(resp);
-  return resp;
+    // console.log(deepAiresp);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 
+  try {
+    var cloudResponse = await cloudinary.uploader.upload(
+      deepAiresp.output_url,
+      {
+        unique_id: true,
+        use_filename: false,
+        unique_filename: true,
+        overwrite: false,
+      }
+    );
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+
+  console.log(deepAiresp);
+  console.log(cloudResponse);
 });
 
 router.get("/prompts", (req, res) => {
