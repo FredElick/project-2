@@ -21,10 +21,10 @@
       rel="stylesheet"
     /> 
     {{! import monaco font }}
-   <link
+   {{!-- <link
       href="https://fonts.googleapis.com/css?family=monaco:300,400,500,700&display=swap"
       rel="stylesheet"
-    /> 
+    />  --}}
     {{! import futura font }}
     <link
       href="https://fonts.googleapis.com/css?family=Futura:300,400,500,700&display=swap"
@@ -34,7 +34,7 @@
   </head>
 
   <body>
-    <div class="wrapper">
+    {{!-- <div class="wrapper"> --}}
       <header>
         {{! import img }}
         <div class="header-container">
@@ -49,12 +49,14 @@
         {{#if loggedIn}}
           <a href="/dashboard">
             <i class="fa-solid fa-table-columns"></i></a>
-
-          <button id="logout" class="btn-no-style"></button>
-
+          
           <a href="/gallery">
             <i class="fa-solid fa-images"></i>
           </a>
+
+          <i id="logout-2"class="fa-solid fa-right-from-bracket">
+          <button id="logout" class="btn-no-style"></button>
+          </i>
 
         {{else}}
           <a href="/login"><i
@@ -75,7 +77,7 @@
       <footer>
         Thanks for visiting!
       </footer>
-    </div>
+    {{!-- </div> --}}
 
     {{#if loggedIn}}
       <script src="/javascript/logout.js"></script>
