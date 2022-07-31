@@ -2,21 +2,39 @@
   <h2>Create New Post</h2>
 
   <form class="new-post-form">
-    <div>
-      <label for="post-title">Title</label>
-      <input type="text" id="post-title" name="post-title" />
+
+  <div class="form-input">
+    <input type="text" placeholder="Enter post title" id="post-title" name="post-title" />
     </div>
-    <div>
-      <label for="post-url">Link</label>
-      <input id="post-url" name="post-url" />
+
+<div class="form-input">
+    <input id="post-url" placeholder="Enter post url" name="post-url" />
     </div>
-    <button type="submit" class="btn">Create</button>
+
+    <button class="create " type="submit">Create</button>
   </form>
+
+
+  <p id="loading">loading image.. please wait</p>
+
+  <form class="image-prompt-form">
+
+    <div class="form-input">
+      <input type="text" id="image-prompt" placeholder="Enter prompt" name="image-prompt" />
+    </div>
+    <button class="create"type="submit" class="Gen-btn">Generate</button>
+      
+
+  </form>
+
+
+
+
 </section>
 
 {{#if posts.length}}
-<section>
-  <h2>Your Posts</h2>
+<section class="your-post-section">
+  <h2 id="your-post-title">Your Posts</h2>
   <ol>
     {{#each posts as |post|}}
     <li>
@@ -29,3 +47,4 @@
 {{/if}}
 
 <script src="/javascript/add-post.js"></script>
+<script src="/javascript/text-to-image.js"></script>

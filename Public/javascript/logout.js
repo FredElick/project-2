@@ -11,4 +11,4 @@ async function logout() {
     }
 }
 
-document.querySelector('#logout').addEventListener('click', logout);
+document.querySelector('#logout-2').addEventListener('click', logout);
