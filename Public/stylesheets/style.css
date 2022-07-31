@@ -461,6 +461,13 @@ form span {
   width: 70%;
   height: 40%;
 }
+#loading {
+  font-family: "lato";
+  font-size: 1.2em;
+  color: var(--secondary-light);
+  margin: 10px auto 0 auto;
+  text-align: center;
+}
 
 /* DASHBOARD END */
 
